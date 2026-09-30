@@ -1,2 +1,2 @@
-# Prjoect1
+# Project1
 hi everyone
