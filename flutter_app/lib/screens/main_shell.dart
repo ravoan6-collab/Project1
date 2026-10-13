@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'map_screen.dart';
 import 'profile_screen.dart';
+import 'search_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -15,6 +16,7 @@ class _MainShellState extends State<MainShell> {
 
   final _pages = const [
     HomeScreen(),
+    SearchScreen(),
     MapScreen(),
     ProfileScreen(),
   ];
@@ -28,6 +30,7 @@ class _MainShellState extends State<MainShell> {
         onDestinationSelected: (i) => setState(() => _index = i),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
           NavigationDestination(icon: Icon(Icons.map), label: 'Map'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
         ],
