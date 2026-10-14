@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'screens/main_shell.dart';
+import 'package:provider/provider.dart';
+import 'providers/auth_provider.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
-  runApp(const TravelApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AuthProvider(),
+      child: const TravelApp(),
+    ),
+  );
 }
 
 class TravelApp extends StatelessWidget {
@@ -24,7 +31,7 @@ class TravelApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const MainShell(),
+      home: const SplashScreen(),
     );
   }
 }
